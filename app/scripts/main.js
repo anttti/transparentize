@@ -18,6 +18,7 @@ var pixels = getPixels(originalImage);
 
 var i = 0, data = pixels.data, length = data.length, threshold = 230;
 for (; i < length; i += 4) {
+    // Pixel data is just a huge array where values are ordered RGBARGBARGBA...
     if (data[i] >= threshold && data[i+1] >= threshold && data[i+2] >= threshold) {
         data[i+3] = 0;
     }
